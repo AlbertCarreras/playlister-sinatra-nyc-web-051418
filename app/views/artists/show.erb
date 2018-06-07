@@ -5,6 +5,19 @@
     <title><%= @artist.name %></title>
   </head>
   <body>
-    
+    <h1><%= @artist.name %></h1><% genres = [] %>
+    <h2>Songs</h2>
+    <ul>
+      <% @artist.songs.each do |song| %>
+      <a href="/songs/<%= song.slug %>"><li><%= song.name %></li></a>
+      <% genres << @song_genre.find_by(song: song).genre %>
+      <% end %>
+    </ul>
+    <h2>Genres</h2>
+    <ul>
+      <% genres.each do |genre| %>
+        <a href="/genres/<%= genre.slug %>"><li><%= genre.name %></li></a>
+      <% end %>
+    </ul>
   </body>
 </html>

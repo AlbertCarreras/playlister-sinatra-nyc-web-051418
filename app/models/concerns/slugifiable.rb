@@ -1,12 +1,16 @@
 module Slugifiable
-  def slug(name)
-    slug = name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-    slug
+
+  module InstanceMethod
+    def slug
+      self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    end
   end
 
-  def find_by_slug(slug)
-    self.all.find do |value|
-      slug(value.name) == slug
+  module ClassMethod
+    def find_by_slug(slug)
+      self.all.find do |value|
+        value.slug == slug
+      end
     end
   end
 end
