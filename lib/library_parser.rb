@@ -31,12 +31,7 @@ class LibraryParser
     song = Song.create(name: song_name)
     genre = Genre.find_or_create_by(name: genre_name)
     artist = Artist.find_or_create_by(name: artist_name)
-
-    song.artist = artist
-    # song.genre_id = genre.id
-
-
-    song.song_genres.build(genre: genre)
+    song_genre = SongGenre.create(song: song, genre: genre)
     song.artist = artist
     song.save
   end
