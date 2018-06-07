@@ -10,4 +10,5 @@ class ArtistsController < ApplicationController
     @song_genre = SongGenre.all
     erb :"artists/show"
   end
+
 end
