@@ -1,6 +1,6 @@
 <ul>
   <%  @artists.each do |artist| %>
-    <a href="/artists/<%= artist.name %>">
+    <a href="/artists/<%= Artist.slug(artist.name) %>">
       <li><%= artist.name %></li>
     </a>
   <% end %>
