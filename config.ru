@@ -6,6 +6,11 @@ end
 
 use Rack::MethodOverride
 use ArtistsController
+<<<<<<< HEAD
 use SongsController
 use GenresController
+=======
+use GenresController
+use SongsController
+>>>>>>> origin/tony
 run ApplicationController
