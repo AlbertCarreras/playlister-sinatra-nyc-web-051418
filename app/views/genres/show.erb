@@ -7,7 +7,16 @@
   <body>
     <h1><%= @genre.name %></h1>
     <h2>Songs</h2>
-      <%= @song_genre.get_songs_from_genre %>
+    <ul>
+      <% @songs.each do |song| %>
+        <a href="/songs/<%= song.slug %>"><li><%= song.name %></li></a>
+      <% end %>
+    </ul>
     <h2>Artists</h2>
+    <ul>
+      <% @artists.each do |artist| %>
+        <a href="/artists/<%= artist.slug %>"><li><%= artist.name %></li></a>
+      <% end %>
+    </ul>
   </body>
 </html>

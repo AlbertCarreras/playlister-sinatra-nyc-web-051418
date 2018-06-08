@@ -5,6 +5,8 @@
     <title><%= @song.name %></title>
   </head>
   <body>
-
+    <h1><%= @song.name %></h1>
+    <h2>Artist: <a href="/artists/<%= @artist.slug %>"><%= @artist.name %></a></h2>
+    <h2>Genre: <a href="/genres/<%= @genre.slug %>"><%= @genre.name.capitalize %></a></h2>
   </body>
 </html>

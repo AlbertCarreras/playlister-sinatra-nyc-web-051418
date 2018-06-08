@@ -11,7 +11,7 @@ class Genre < ActiveRecord::Base
     end
 
     song_genres.map do |sg|
-      Song.find_by(id: sg.song_id)
+      sg.song
     end
   end
 end
